@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Http;
 class PetadataController extends Controller
 {
     public function index(){
-        $title = 'Peta data - Stranas PK';
+        $title = 'Peta data - simontini';
         $navbar = 'petadata';
         return view('frontends.petadata', compact('title', 'navbar'));
     }

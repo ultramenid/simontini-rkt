@@ -42,7 +42,7 @@
         var provinsi;
         var map = new L.Map('map');
 		var osmUrl='http://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}';
-		var osmAttrib='Simontono';
+		var osmAttrib='Simontinus';
 		var osm = new L.TileLayer(osmUrl, {minZoom: 5, maxZoom: 18, attribution: osmAttrib});
 
 		map.addLayer(osm);

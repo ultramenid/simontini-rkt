@@ -101,32 +101,13 @@
         // var shat = L.layerGroup([hgb, hgu, hm]);
         // var allLayer = L.layerGroup([TutupanSawit,batas,trayektatabatas,terbangun,penetapan])
 
-
-        var adminkabkota = L.tileLayer.wms('https://aws.simontini.id/geoserver/wms', {
-            layers: 'administrative_boundaries',
-            transparent: true,
-            format: 'image/png'
-        });
-
-        var hutanalam = L.tileLayer.wms('https://aws.simontini.id/geoserver/wms', {
-            layers: 'simontini:Hutan_Alam_adm',
-            transparent: true,
-            format: 'image/png'
-        });
-
-        var hgu = L.tileLayer.wms('https://aws.simontini.id/geoserver/wms', {
-            layers: 'kpa:HGU_BPN_2019',
-            transparent: true,
-            format: 'image/png'
-        });
-
         var kawasanhutan = L.tileLayer.wms('https://aws.simontini.id/geoserver/wms', {
             layers: 'simontini:Forest_estate_adm',
             transparent: true,
             format: 'image/png'
         });
-        var burnarea = L.tileLayer.wms('https://aws.simontini.id/geoserver/wms', {
-            layers: 'simontini:Burn_Area_2015',
+        var hutanalam = L.tileLayer.wms('https://aws.simontini.id/geoserver/wms', {
+            layers: 'simontini:Hutan_Alam_adm',
             transparent: true,
             format: 'image/png'
         });
@@ -135,6 +116,33 @@
             transparent: true,
             format: 'image/png'
         });
+        var burnarea = L.tileLayer.wms('https://aws.simontini.id/geoserver/wms', {
+            layers: 'simontini:Burn_Area_2015',
+            transparent: true,
+            format: 'image/png'
+        });
+        var hgu = L.tileLayer.wms('https://aws.simontini.id/geoserver/wms', {
+            layers: 'kpa:HGU_BPN_2019',
+            transparent: true,
+            format: 'image/png'
+        });
+        var adminkabkota = L.tileLayer.wms('https://aws.simontini.id/geoserver/wms', {
+            layers: 'administrative_boundaries',
+            transparent: true,
+            format: 'image/png'
+        });
+
+        var potensiminerba = L.tileLayer.wms('https://aws.simontini.id/geoserver/wms', {
+            layers: 'tiger:Geologi 100K Selected',
+            transparent: true,
+            format: 'image/png'
+        });
+
+
+
+
+
+
         // checkbox section
         $('#adminkabkota:checkbox').on('change', function() {
             var checkbox = $(this);
@@ -188,6 +196,15 @@
                 map.addLayer(kantonghabitat);
             } else {
                 map.removeLayer(kantonghabitat);
+            }
+        });
+        $('#potensiminerba:checkbox').on('change', function() {
+            var checkbox = $(this);
+            // toggle the layer
+            if ($(checkbox).is(':checked')) {
+                map.addLayer(potensiminerba);
+            } else {
+                map.removeLayer(potensiminerba);
             }
         });
         // $('#admprovinsi:checkbox').on('change', function() {
